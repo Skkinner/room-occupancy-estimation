@@ -1,0 +1,34 @@
+{
+    "model": "Logistic Regression",
+    "feature_set": "C",
+    "features": [
+        "S1_Temp",
+        "S2_Temp",
+        "S3_Temp",
+        "S4_Temp",
+        "S1_Light",
+        "S2_Light",
+        "S3_Light",
+        "S4_Light",
+        "S1_Sound",
+        "S2_Sound",
+        "S3_Sound",
+        "S4_Sound",
+        "S5_CO2",
+        "S5_CO2_Slope",
+        "S6_PIR",
+        "S7_PIR"
+    ],
+    "classes": [
+        0,
+        1,
+        2,
+        3
+    ],
+    "best_params": {
+        "C": 1.0129197956845732
+    },
+    "preprocessing": "StandardScaler",
+    "training_period": "December 2017",
+    "intended_use": "Research prototype"
+}

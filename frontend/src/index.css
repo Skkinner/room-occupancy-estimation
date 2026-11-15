@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Security-operations palette: navy/slate base, teal for neutral UI, amber for inspection
+       warnings, red reserved for the explicit simulated-drill notice only. */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 42% 9%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 42% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 173 70% 42%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 92%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 22% 70%;
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 96%;
+    --border: 217 30% 20%;
+    --input: 217 30% 24%;
+    --ring: 173 70% 48%;
+    --warning: 38 92% 52%;
+    --warning-foreground: 26 90% 10%;
+    --drill: 0 74% 50%;
+    --drill-foreground: 0 0% 100%;
+    --radius: 0.6rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    background-image:
+      radial-gradient(1200px 500px at 10% -10%, hsl(173 70% 42% / 0.06), transparent 60%),
+      radial-gradient(900px 400px at 110% 0%, hsl(217 80% 50% / 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  html[dir='rtl'] body {
+    font-family: 'IBM Plex Sans Arabic', Inter, system-ui, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Hatched pattern used for STALE / unavailable data so it never looks like a solid "current" value. */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      hsl(var(--warning) / 0.14) 0 6px,
+      transparent 6px 12px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
