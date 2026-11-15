@@ -11,6 +11,16 @@ A machine-learning class project that estimates how many people are in a room (0
 **simulated** evacuation drill to help a building security coordinator prioritize which rooms to sweep
 manually.
 
+## Interactive Demo
+
+A separate Streamlit prototype that lets you play "you vs the AI" against recorded sensor readings:
+
+- **App (Streamlit):** https://is-anyone-there.streamlit.app/
+- **API docs (FastAPI):** https://room-occupancy-api-7gja.onrender.com/docs
+- **Demo source code:** https://github.com/Basmaalmuntaser/room-occupancy-demo
+
+> Research demo only, not for life-safety decisions. It runs on free hosting, so after idle time the first load can take about a minute while the API wakes up.
+
 | | |
 | --- | --- |
 | Dataset | [UCI Room Occupancy Estimation (#864)](https://archive.ics.uci.edu/dataset/864/room+occupancy+estimation), one room, Dec 2017 – Jan 2018 |
